@@ -1,0 +1,160 @@
+/* =========================
+   VARIÁVEIS
+========================= */
+
+:root {
+    --cor-fundo: #000000;
+    --cor-superficie: #181818;
+    --cor-superficie-hover: #242424;
+
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #b3b3b3;
+
+    --cor-destaque: #e50914;
+    --cor-destaque-hover: #b6060f;
+
+    --cor-divisor: #515c6f;
+    --cor-cinza-faq: #303030;
+
+    --largura-maxima: 1200px;
+
+    --raio-pequeno: 0.375rem;
+    --raio-medio: 0.75rem;
+
+    --transicao-padrao: 180ms ease;
+}
+
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================
+   BANNER INICIAL
+========================= */
+
+.banner-inicial {
+    min-height: 610px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.01),
+            rgba(0, 0, 0, 0.1)
+        ),
+        url("../assets/images/banner-initial.png")
+        center top / cover
+        no-repeat;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.banner-inicial .navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+/* =========================
+   CONTEÚDO DO BANNER
+========================= */
+
+.titulo-banner {
+    margin-bottom: 1rem;
+
+    font-size: 5rem;
+    line-height: 1.05;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn-netflix {
+    padding: 1.25rem 2.2rem;
+
+    border: none;
+    border-radius: var(--raio-pequeno);
+
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    transition:
+        background-color var(--transicao-padrao),
+        transform var(--transicao-padrao);
+}
+
+
+.btn-netflix:hover,
+.btn-netflix:focus-visible {
+    background-color: var(--cor-destaque-hover);
+    color: var(--cor-texto);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--cor-texto);
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+    .banner-inicial {
+        min-height: 560px;
+    }
+
+
+    .titulo-banner {
+        font-size: 2.75rem;
+    }
+
+
+    .btn-netflix {
+        padding: 1rem 1.75rem;
+
+        font-size: 1.2rem;
+    }
+
+}
+
+
