@@ -241,7 +241,8 @@ img {
 
     font-size: 1.1rem;
 }
-button.accordion-button.collapsed {
+
+.secao-faq .accordion-button.collapsed {
     font-weight: 500;
 }
 
@@ -307,7 +308,7 @@ button:focus-visible {
    RESPONSIVIDADE
 ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
 
     .banner-inicial {
         min-height: 560px;
