@@ -6,6 +6,8 @@
     --cor-fundo: #000000;
 
     --cor-texto: #ffffff;
+    /* --cor-texto-secundario: #b3b3b3; */
+    --cor-texto-secundario: #7c7a7a;
 
     --cor-destaque: #e50914;
     --cor-destaque-hover: #b6060f;
@@ -50,7 +52,6 @@ img {
 
 .banner-inicial {
     min-height: 610px;
-
     background:
         linear-gradient(
             rgba(0, 0, 0, 0.01),
@@ -244,6 +245,53 @@ button.accordion-button.collapsed {
     font-weight: 500;
 }
 
+/* =========================
+   RODAPÉ
+========================= */
+.rodape {
+    padding-block: 3rem;
+
+    color: var(--cor-texto-secundario);
+}
+
+.rodape__contato {
+    margin-bottom: 2.5rem;
+}
+
+.rodape__contato a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.rodape__lista {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.rodape__lista li + li {
+    margin-top: 0.75rem;
+}
+
+.rodape__lista a {
+    color: var(--cor-texto-secundario);
+
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.rodape__lista a:hover {
+    color: var(--cor-texto);
+
+    text-decoration: underline;
+}
+
+.rodape__marca {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
 /* =========================
    ACESSIBILIDADE
 ========================= */
