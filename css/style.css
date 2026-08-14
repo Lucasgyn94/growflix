@@ -95,7 +95,7 @@ img {
    BOTÕES
 ========================= */
 
-.btn-netflix {
+.btn-growflix {
     padding: 1.25rem 2.2rem;
 
     border: none;
@@ -113,13 +113,65 @@ img {
 }
 
 
-.btn-netflix:hover,
-.btn-netflix:focus-visible {
+.btn-growflix:hover,
+.btn-growflix:focus-visible {
     background-color: var(--cor-destaque-hover);
     color: var(--cor-texto);
 
     transform: translateY(-2px);
 }
+
+/* =========================
+   SEÇÕES DE DESTAQUE
+========================= */
+.secao-destaque {
+    padding-block: 5rem;
+
+    border-bottom: 3px solid var(--cor-divisor);
+
+}
+
+.secao-destaque__conteudo {
+    max-width: 520px;
+}
+
+.secao-destaque__titulo {
+    margin-bottom: 1rem;
+    
+    font-size: clamp(
+        2.5rem,
+        5vw,
+        3.5rem
+
+    ); /*A função clamp permite definir um valor mínimo, um valor ideal e um valor máximo para uma propriedade CSS em uma única linha.*/
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.secao-destaque__texto {
+    margin: 0;
+    
+    font-size: clamp(
+        1.25rem,
+        2.5vw,
+        1.75rem
+    );
+
+    line-height: 1.5;
+}
+
+.secao-destaque__figura {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.secao-destaque__imagem {
+    width: 100%;
+    max-width: 520px;
+}
+
 
 
 /* =========================
@@ -149,10 +201,20 @@ button:focus-visible {
     }
 
 
-    .btn-netflix {
+    .btn-growflix {
         padding: 1rem 1.75rem;
 
         font-size: 1.2rem;
+    }
+
+    .secao-destaque {
+        padding-block: 3.5rem;
+    }
+
+    .secao-destaque__conteudo {
+        max-width: 100%;
+        
+        text-align: center;
     }
 
 }
