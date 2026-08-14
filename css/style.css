@@ -4,11 +4,8 @@
 
 :root {
     --cor-fundo: #000000;
-    --cor-superficie: #181818;
-    --cor-superficie-hover: #242424;
 
     --cor-texto: #ffffff;
-    --cor-texto-secundario: #b3b3b3;
 
     --cor-destaque: #e50914;
     --cor-destaque-hover: #b6060f;
@@ -16,10 +13,7 @@
     --cor-divisor: #515c6f;
     --cor-cinza-faq: #303030;
 
-    --largura-maxima: 1200px;
-
     --raio-pequeno: 0.375rem;
-    --raio-medio: 0.75rem;
 
     --transicao-padrao: 180ms ease;
 }
@@ -34,7 +28,6 @@
 *::after {
     box-sizing: border-box;
 }
-
 
 
 body {
@@ -121,36 +114,40 @@ img {
     transform: translateY(-2px);
 }
 
+
 /* =========================
    SEÇÕES DE DESTAQUE
 ========================= */
+
 .secao-destaque {
     padding-block: 5rem;
 
     border-bottom: 3px solid var(--cor-divisor);
-
 }
+
 
 .secao-destaque__conteudo {
     max-width: 520px;
 }
 
+
 .secao-destaque__titulo {
     margin-bottom: 1rem;
-    
+
     font-size: clamp(
         2.5rem,
         5vw,
         3.5rem
+    );
 
-    ); /*A função clamp permite definir um valor mínimo, um valor ideal e um valor máximo para uma propriedade CSS em uma única linha.*/
     font-weight: 700;
     line-height: 1.1;
 }
 
+
 .secao-destaque__texto {
     margin: 0;
-    
+
     font-size: clamp(
         1.25rem,
         2.5vw,
@@ -160,6 +157,7 @@ img {
     line-height: 1.5;
 }
 
+
 .secao-destaque__figura {
     margin: 0;
 
@@ -167,12 +165,84 @@ img {
     justify-content: center;
 }
 
+
 .secao-destaque__imagem {
     width: 100%;
     max-width: 520px;
 }
 
 
+/* =========================
+   PERGUNTAS FREQUENTES
+========================= */
+
+.secao-faq {
+    padding-block: 5rem;
+
+    border-bottom: 3px solid var(--cor-divisor);
+}
+
+
+.secao-faq__titulo {
+    margin-bottom: 2rem;
+
+    font-size: clamp(
+        2.5rem,
+        5vw,
+        3.5rem
+    );
+
+    font-weight: 700;
+}
+
+
+.secao-faq .accordion-item {
+    border: 4px solid var(--cor-fundo);
+
+    background-color: var(--cor-fundo);
+}
+
+
+.secao-faq .accordion-button {
+    padding: 1.5rem;
+
+    background-color: var(--cor-cinza-faq);
+    color: var(--cor-texto);
+
+    font-size: 1.3rem;
+
+    box-shadow: none;
+}
+
+
+.secao-faq .accordion-button:not(.collapsed) {
+    background-color: var(--cor-cinza-faq);
+    color: var(--cor-texto);
+}
+
+
+.secao-faq .accordion-button::after {
+    background-image:
+        url("../assets/images/add.svg");
+}
+
+
+.secao-faq .accordion-body {
+    background-color: var(--cor-cinza-faq);
+    color: var(--cor-texto);
+
+    font-size: 1.1rem;
+}
+
+
+.secao-faq__chamada {
+    margin-bottom: 1rem;
+
+    font-size: 1.1rem;
+}
+button.accordion-button.collapsed {
+    font-weight: 500;
+}
 
 /* =========================
    ACESSIBILIDADE
@@ -207,16 +277,28 @@ button:focus-visible {
         font-size: 1.2rem;
     }
 
+
     .secao-destaque {
         padding-block: 3.5rem;
     }
 
+
     .secao-destaque__conteudo {
         max-width: 100%;
-        
+
         text-align: center;
     }
 
+
+    .secao-faq {
+        padding-block: 3.5rem;
+    }
+
+
+    .secao-faq .accordion-button {
+        padding: 1.2rem;
+
+        font-size: 1.05rem;
+    }
+
 }
-
-
