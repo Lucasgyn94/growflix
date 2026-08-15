@@ -393,19 +393,32 @@ img {
 /* =========================
    HOME - CARDS DE VÍDEO
 ========================= */
+/* =========================
+   HOME - CARDS DE VÍDEO
+========================= */
+
 .card-video {
+    position: relative;
+
+    height: 100%;
+
     overflow: hidden;
+
     background-color: #181818;
 
     border-radius: var(--raio-pequeno);
 
     cursor: pointer;
 
-    transition: transform var(--transicao-padrao);
+    transition:
+        transform var(--transicao-padrao),
+        box-shadow var(--transicao-padrao);
 }
 
 .card-video:hover {
-    transform: translate(-4px);
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .card-video__imagem {
@@ -417,14 +430,25 @@ img {
 }
 
 .card-video__conteudo {
+    min-height: 74px;
+
     padding: 1rem;
 }
 
 .card-video__titulo {
     margin: 0;
 
+    overflow: hidden;
+
+    display: -webkit-box;
+
     font-size: 1rem;
     font-weight: 600;
+    line-height: 1.3;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 /* =========================
