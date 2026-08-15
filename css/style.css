@@ -360,7 +360,7 @@ img {
 ========================= */
 
 .hero-home {
-    min-height: 620px;
+    min-height: clamp(620px, 45vw, 800px);
 
     background:
         linear-gradient(
@@ -373,7 +373,7 @@ img {
 }
 
 .hero-home__conteudo {
-    min-height: 620px;
+    min-height: clamp(620px, 45vw, 800px);
 
     padding-bottom: 3rem;
 }
