@@ -293,6 +293,86 @@ img {
     margin-top: 3rem;
     margin-bottom: 0;
 }
+
+/* =========================
+   HOME - CABEÇALHO
+========================= */
+
+.cabecalho-home {
+    background-color: var(--cor-fundo);
+}
+
+
+/* =========================
+   HOME - NAVEGAÇÃO
+========================= */
+
+.navegacao-home {
+    padding-block: 1rem;
+}
+
+.navegacao-home .nav-link {
+    color: var(--cor-texto-secundario);
+
+    transition: color var(--transicao-padrao);
+}
+
+.navegacao-home .nav-link:hover,
+.navegacao-home .nav-link:focus-visible,
+.navegacao-home .nav-link.active {
+    color: var(--cor-texto);
+}
+
+
+/* =========================
+   HOME - HERO
+========================= */
+
+.hero-home {
+    min-height: 620px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../assets/images/growcast-01.png")
+        center / cover
+        no-repeat;
+}
+
+.hero-home__conteudo {
+    min-height: 620px;
+
+    padding-bottom: 3rem;
+}
+
+.hero-home__categoria {
+    margin-bottom: 0.5rem;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.hero-home__titulo {
+    margin-bottom: 1.25rem;
+
+    font-size: clamp(
+        3rem,
+        6vw,
+        4.8rem
+    );
+
+    font-weight: 800;
+}
+
+.hero-home__botao {
+    padding: 0.65rem 1rem;
+
+    font-weight: 700;
+}
+
+
 /* =========================
    ACESSIBILIDADE
 ========================= */
@@ -348,6 +428,19 @@ button:focus-visible {
         padding: 1.2rem;
 
         font-size: 1.05rem;
+    }
+
+    .hero-home {
+        min-height: 500px;
+    }
+
+    .hero-home__conteudo {
+        min-height: 500px;
+        padding-bottom: 2rem;
+    }
+
+    .hero-home__titulo {
+        font-size: 3rem;
     }
 
 }
