@@ -58,8 +58,9 @@ img {
             rgba(0, 0, 0, 0.1)
         ),
         url("../assets/images/banner-initial.png")
-        center top / cover
-        no-repeat;
+            center top / cover
+            no-repeat;
+    
 }
 
 
@@ -458,6 +459,14 @@ img {
 
 .modal-video__cabecalho {
     border-bottom: 1px solid var(--cor-divisor);
+}
+
+/* =========================
+   RODAPÉ - HOME
+========================= */
+
+.rodape {
+    border-top: 3px solid var(--cor-divisor);
 }
 
 
