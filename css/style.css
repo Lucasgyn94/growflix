@@ -398,6 +398,14 @@ img {
     background-color: #181818;
 
     border-radius: var(--raio-pequeno);
+
+    cursor: pointer;
+
+    transition: transform var(--transicao-padrao);
+}
+
+.card-video:hover {
+    transform: translate(-4px);
 }
 
 .card-video__imagem {
@@ -417,6 +425,18 @@ img {
 
     font-size: 1rem;
     font-weight: 600;
+}
+
+/* =========================
+   HOME - MODAL DE VÍDEO
+========================= */
+.modal-video__conteudo {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.modal-video__cabecalho {
+    border-bottom: 1px solid var(--cor-divisor);
 }
 
 

@@ -142,6 +142,8 @@
                         <button
                             type="button"
                             class="btn btn-light hero-home__botao"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal-video"
                         >
                             ▶ Assistir
                         </button>
@@ -271,6 +273,60 @@
     <footer>
 
     </footer>
+
+    <!-- =========================
+     MODAL DE VÍDEO
+    ========================== -->
+
+    <div
+        class="modal fade"
+        id="modal-video"
+        tabindex="-1"
+        aria-labelledby="titulo-modal-video"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content modal-video__conteudo">
+
+                <div class="modal-header modal-video__cabecalho">
+
+                    <h2
+                        id="titulo-modal-video"
+                        class="modal-title fs-5"
+                    >
+                        Reproduzir vídeo
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar"
+                    ></button>
+
+                </div>
+
+                <div class="modal-body p-0">
+
+                    <div class="ratio ratio-16x9">
+
+                        <iframe
+                            id="player-video"
+                            src=""
+                            title="Player de vídeo da Growflix"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 
     <!-- Bootstrap JS local -->
