@@ -181,7 +181,7 @@ img {
 .secao-faq {
     padding-block: 5rem;
 
-    border-bottom: 3px solid var(--cor-divisor);
+    /* border-bottom: 3px solid var(--cor-divisor); */
 }
 
 
@@ -248,12 +248,15 @@ img {
 }
 
 /* =========================
-   RODAPÉ
+   RODAPÉ 
 ========================= */
 .rodape {
     padding-block: 3rem;
 
     color: var(--cor-texto-secundario);
+
+    border-top: 3px solid var(--cor-divisor);
+
 }
 
 .rodape__contato {
@@ -462,15 +465,6 @@ img {
 }
 
 /* =========================
-   RODAPÉ - HOME
-========================= */
-
-.rodape {
-    border-top: 3px solid var(--cor-divisor);
-}
-
-
-/* =========================
    ACESSIBILIDADE
 ========================= */
 
@@ -528,16 +522,64 @@ button:focus-visible {
     }
 
     .hero-home {
-        min-height: 500px;
+        min-height: 460px;
+
+        background-position: center;
     }
 
     .hero-home__conteudo {
-        min-height: 500px;
+        min-height: 460px;
         padding-bottom: 2rem;
     }
 
+    .hero-home__categoria {
+        font-size: 0.8rem;
+    }
+
     .hero-home__titulo {
-        font-size: 3rem;
+        margin-bottom: 1rem;
+
+        font-size: 2.75rem;
+    }
+
+    .hero-home__botao {
+        padding: 0.55rem 0.9rem;
+
+        font-size: 0.95rem;
+    }
+
+    .secao-catalogo {
+        padding-block: 2rem;
+    }
+
+    .secao-catalogo__cabecalho {
+        margin-bottom: 1rem;
+    }
+
+    .secao-catalogo__titulo {
+        font-size: 1.1rem;
+    }
+
+    .card-video {
+        width: 100%;
+    }
+
+    .card-video__conteudo {
+        min-height: 64px;
+
+        padding: 0.8rem;
+    }
+
+    .card-video__titulo {
+        font-size: 0.95rem;
+    }
+
+    .modal-dialog {
+        margin: 0.75rem;
+    }
+
+    .modal-video__cabecalho {
+        padding: 0.75rem 1rem;
     }
 
 }

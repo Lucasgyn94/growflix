@@ -1,3 +1,5 @@
+const botaoHero = document.querySelector(".hero-home__botao");
+
 const listaGrowcast = document.querySelector("#lista-growcast");
 const listaWebinar = document.querySelector("#lista-webinar");
 const listaUxUi = document.querySelector("#lista-ux-ui");
@@ -8,17 +10,11 @@ const secoesPorCategoria = {
     webinar: listaWebinar,
     "ux-ui": listaUxUi,
     diversos: listaDiversos
-}
-
-
+};
 
 
 const modalVideo = document.querySelector("#modal-video");
-const playerVideo = document.querySelector("#player-video")
-
-const videosGrowcast = videos.filter((video) => {
-    return video.category === "growcast"
-});
+const playerVideo = document.querySelector("#player-video");
 
 function renderizarVideo(video, elementoDestino) {
 
@@ -85,6 +81,16 @@ function renderizarVideo(video, elementoDestino) {
     elementoDestino.appendChild(coluna);
 }
 
+botaoHero.addEventListener("click", () => {
+    playerVideo.src = botaoHero.dataset.link;
+
+    const modal = 
+        bootstrap.Modal.getOrCreateInstance(modalVideo);
+
+    modal.show();
+});
+
+
 function renderizarCatalogo() {
     videos.forEach((video) => {
         const elementoDestino = secoesPorCategoria[video.category];
@@ -97,12 +103,11 @@ function renderizarCatalogo() {
         renderizarVideo(
             video, elementoDestino
         );
-    })
+    });
 }
 
 modalVideo.addEventListener("hidden.bs.modal", () => {
     playerVideo.src = "";
-})
+});
 
-// renderizarVideos(videosGrowcast, listaGrowcast);
 renderizarCatalogo();
