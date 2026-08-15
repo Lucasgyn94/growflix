@@ -327,6 +327,33 @@ img {
     color: var(--cor-texto);
 }
 
+/* =========================
+   HOME - BUSCA
+========================= */
+
+.busca-home {
+    width: 100%;
+}
+
+.busca-home__campo {
+    border: 1px solid var(--cor-texto-secundario);
+
+    background-color: rgba(0, 0, 0, 0.65);
+    color: var(--cor-texto);
+}
+
+.busca-home__campo::placeholder {
+    color: var(--cor-texto-secundario);
+}
+
+.busca-home__campo::focus {
+    border-color: var(--cor-texto);
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    box-shadow: none;
+}
 
 /* =========================
    HOME - HERO
@@ -580,6 +607,14 @@ button:focus-visible {
 
     .modal-video__cabecalho {
         padding: 0.75rem 1rem;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .busca-home {
+        width: 240px;
     }
 
 }

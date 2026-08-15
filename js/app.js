@@ -1,15 +1,23 @@
-const botaoHero = document.querySelector(".hero-home__botao");
-
 const listaGrowcast = document.querySelector("#lista-growcast");
 const listaWebinar = document.querySelector("#lista-webinar");
 const listaUxUi = document.querySelector("#lista-ux-ui");
 const listaDiversos = document.querySelector("#lista-diversos");
+
+const botaoHero = document.querySelector(".hero-home__botao");
+const campoBusca = document.querySelector("#campo-busca");
 
 const secoesPorCategoria = {
     growcast: listaGrowcast,
     webinar: listaWebinar,
     "ux-ui": listaUxUi,
     diversos: listaDiversos
+};
+
+const secoesCatalogo = {
+    growcast: document.querySelector("#secao-growcast"),
+    webinar: document.querySelector("#secao-webinar"),
+    "ux-ui": document.querySelector("#secao-ux-ui"),
+    diversos: document.querySelector("#secao-diversos")
 };
 
 
@@ -91,23 +99,61 @@ botaoHero.addEventListener("click", () => {
 });
 
 
-function renderizarCatalogo() {
-    videos.forEach((video) => {
+function renderizarCatalogo(listaDeVideos) {
+    limparCatalogo();
+
+    listaDeVideos.forEach((video) => {
         const elementoDestino = secoesPorCategoria[video.category];
 
         if (!elementoDestino) {
-            console.warn(`Categoria: ${video.category} não encontrada`);
+            console.warn(`Categoria: ${video.category} não encontrada.`);
             return;
         }
-        
+
         renderizarVideo(
-            video, elementoDestino
+            video,
+            elementoDestino
         );
     });
+
+    atualizarVisibilidadeSecoes(listaDeVideos);
 }
+
+function limparCatalogo() {
+    Object.values(secoesPorCategoria).forEach((secao) => {
+        secao.innerHTML = "";
+    });
+    /*OBS: Object.values(secoesPorCategoria) retorna somente os valores: */
+}
+
+function atualizarVisibilidadeSecoes(listaDeVideos) {
+    Object.keys(secoesCatalogo).forEach((categoria) => {
+        const possuiVideos = listaDeVideos.some((video) => {
+            return video.category === categoria;
+        });
+        secoesCatalogo[categoria].hidden = !possuiVideos;
+
+    });
+}
+
+campoBusca.addEventListener("input", () => {
+    const termoBusca = campoBusca.value.trim().toLowerCase();
+
+    const videosFiltrados = videos.filter((video) => {
+        const titulo = video.title.toLowerCase();
+        const categoria = video.category.toLowerCase();
+        
+        return (
+            titulo.includes(termoBusca) ||
+            categoria.includes(termoBusca)
+        );
+    });
+    renderizarCatalogo(videosFiltrados);
+});
 
 modalVideo.addEventListener("hidden.bs.modal", () => {
     playerVideo.src = "";
 });
 
-renderizarCatalogo();
+
+renderizarCatalogo(videos);
