@@ -372,6 +372,53 @@ img {
     font-weight: 700;
 }
 
+/* =========================
+   HOME - CATÁLOGO
+========================= */
+.secao-catalogo {
+    padding-block: 2.5rem;
+}
+
+.secao-catalogo__cabecalho {
+    margin-bottom: 1.5rem;
+}
+
+.secao-catalogo__titulo {
+    margin: 0;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* =========================
+   HOME - CARDS DE VÍDEO
+========================= */
+.card-video {
+    overflow: hidden;
+    background-color: #181818;
+
+    border-radius: var(--raio-pequeno);
+}
+
+.card-video__imagem {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+}
+
+.card-video__conteudo {
+    padding: 1rem;
+}
+
+.card-video__titulo {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
 
 /* =========================
    ACESSIBILIDADE

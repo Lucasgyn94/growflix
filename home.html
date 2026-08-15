@@ -42,7 +42,7 @@
             class="navbar navbar-expand-lg navbar-dark navegacao-home"
             aria-label="Navegação principal"
         >
-            <div class="container">
+            <div class="container-fluid">
 
                 <a
                     class="navbar-brand"
@@ -152,7 +152,6 @@
 
             </div>
         </section>
-
     </header>
 
 
@@ -161,7 +160,107 @@
     ========================== -->
 
     <main>
+        <section 
+            id="secao-growcast"
+            class="secao-catalogo"
+            aria-labelledby="titulo-secao-growcast"
+        >   
+            <div class="container">
+                <div class="secao-catalogo__cabecalho">
+                    <h2 
+                        id="titulo-secao-growcast"
+                        class="secao-catalogo__titulo"
+                    >  
+                        Growcast [Episódios]
 
+                    </h2>
+                </div>
+
+                <div
+                    id="lista-growcast" 
+                    class="row g-4">
+                    <!--VÍDEOS QUE SERÃO INSERIDOS DINAMICAMENTE VIA JS-->
+                </div>
+            </div>
+
+        </section>
+
+        <section
+            id="secao-webinar" 
+            class="secao-catalogo"
+            aria-labelledby="titulo-secao-webinar"
+        >
+            <div class="container">
+                <div class="secao-catalogo__cabecalho">
+                    <h2
+                        id="titulo-secao-webinar" 
+                        class="secao-catalogo__titulo"
+                    >
+                        Webinar em Flutter
+                    </h2>
+                </div>
+                <div
+                    id="lista-webinar" 
+                    class="row g-4">
+                    <!--VÍDEOS QUE SERÃO INSERIDOS DINAMICAMENTE VIA JS-->
+                </div>
+            </div>
+        </section>
+        <section
+            id="secao-ux-ui"
+            class="secao-catalogo"
+            aria-labelledby="titulo-secao-ux-ui"
+        >
+            <div class="container">
+
+                <div class="secao-catalogo__cabecalho">
+
+                    <h2
+                        id="titulo-secao-ux-ui"
+                        class="secao-catalogo__titulo"
+                    >
+                        Jornada UX/UI
+                    </h2>
+
+                </div>
+
+                <div
+                    id="lista-ux-ui"
+                    class="row g-4"
+                >
+                    <!-- VÍDEOS INSERIDOS DINAMICAMENTE VIA JS -->
+                </div>
+
+            </div>
+        </section>
+
+        <section
+            id="secao-diversos"
+            class="secao-catalogo"
+            aria-labelledby="titulo-secao-diversos"
+        >
+            <div class="container">
+
+                <div class="secao-catalogo__cabecalho">
+
+                    <h2
+                        id="titulo-secao-diversos"
+                        class="secao-catalogo__titulo"
+                    >
+                        Diversos
+                    </h2>
+
+                </div>
+
+                <div
+                    id="lista-diversos"
+                    class="row g-4"
+                >
+                    <!-- VÍDEOS INSERIDOS DINAMICAMENTE VIA JS -->
+                </div>
+
+            </div>
+        </section>
     </main>
 
 
@@ -177,6 +276,12 @@
     <!-- Bootstrap JS local -->
     <script
         src="./assets/libs/bootstrap-5.3/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+        src="./js/database.js"
+    ></script>
+    <script
+        src="./js/app.js"
     ></script>
 
 </body>
