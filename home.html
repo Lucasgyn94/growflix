@@ -36,7 +36,12 @@
     <!-- =========================
          CABEÇALHO / DESTAQUE
     ========================== -->
+
     <header class="cabecalho-home">
+
+        <!-- =========================
+             NAVEGAÇÃO
+        ========================== -->
 
         <nav
             class="navbar navbar-expand-lg navbar-dark navegacao-home"
@@ -44,6 +49,7 @@
         >
             <div class="container-fluid">
 
+                <!-- Logo -->
                 <a
                     class="navbar-brand"
                     href="./index.html"
@@ -58,6 +64,7 @@
                 </a>
 
 
+                <!-- Botão do menu mobile -->
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -71,10 +78,12 @@
                 </button>
 
 
+                <!-- Menu -->
                 <div
                     class="collapse navbar-collapse"
                     id="menu-principal"
                 >
+
                     <div class="navbar-nav">
 
                         <a
@@ -115,19 +124,22 @@
 
                     </div>
 
+
+                    <!-- Busca -->
                     <form
                         class="busca-home ms-lg-auto mt-3 mt-lg-0"
                         role="search"
                     >
-                        <label 
+
+                        <label
                             for="campo-busca"
                             class="visually-hidden"
                         >
                             Buscar vídeos
                         </label>
 
-                        <input 
-                            type="text"
+                        <input
+                            type="search"
                             id="campo-busca"
                             class="form-control busca-home__campo"
                             placeholder="Buscar vídeos..."
@@ -140,6 +152,11 @@
 
             </div>
         </nav>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
 
         <section
             class="hero-home"
@@ -166,7 +183,6 @@
                             type="button"
                             class="btn btn-light hero-home__botao"
                             data-link="https://www.youtube.com/embed/aJ-HZuLcKeA"
-                        
                         >
                             ▶ Assistir
                         </button>
@@ -177,60 +193,88 @@
 
             </div>
         </section>
+
     </header>
 
 
     <!-- =========================
-         CATÁLOGO DE CONTEÚDOS
+         CONTEÚDO PRINCIPAL
     ========================== -->
 
     <main>
-        <section 
+
+        <!-- =========================
+             GROWCAST
+        ========================== -->
+
+        <section
             id="secao-growcast"
             class="secao-catalogo"
             aria-labelledby="titulo-secao-growcast"
-        >   
+        >
             <div class="container">
+
                 <div class="secao-catalogo__cabecalho">
-                    <h2 
+
+                    <h2
                         id="titulo-secao-growcast"
                         class="secao-catalogo__titulo"
-                    >  
+                    >
                         Growcast [Episódios]
-
                     </h2>
+
                 </div>
+
 
                 <div
-                    id="lista-growcast" 
-                    class="row g-4">
-                    <!--VÍDEOS QUE SERÃO INSERIDOS DINAMICAMENTE VIA JS-->
+                    id="lista-growcast"
+                    class="row g-4"
+                >
+                    <!-- Vídeos inseridos dinamicamente via JS -->
                 </div>
-            </div>
 
+            </div>
         </section>
 
+
+        <!-- =========================
+             WEBINAR EM FLUTTER
+        ========================== -->
+
         <section
-            id="secao-webinar" 
+            id="secao-webinar"
             class="secao-catalogo"
             aria-labelledby="titulo-secao-webinar"
         >
             <div class="container">
+
                 <div class="secao-catalogo__cabecalho">
+
                     <h2
-                        id="titulo-secao-webinar" 
+                        id="titulo-secao-webinar"
                         class="secao-catalogo__titulo"
                     >
                         Webinar em Flutter
                     </h2>
+
                 </div>
+
+
                 <div
-                    id="lista-webinar" 
-                    class="row g-4">
-                    <!--VÍDEOS QUE SERÃO INSERIDOS DINAMICAMENTE VIA JS-->
+                    id="lista-webinar"
+                    class="row g-4"
+                >
+                    <!-- Vídeos inseridos dinamicamente via JS -->
                 </div>
+
             </div>
         </section>
+
+
+        <!-- =========================
+             JORNADA UX/UI
+        ========================== -->
+
         <section
             id="secao-ux-ui"
             class="secao-catalogo"
@@ -249,15 +293,21 @@
 
                 </div>
 
+
                 <div
                     id="lista-ux-ui"
                     class="row g-4"
                 >
-                    <!-- VÍDEOS INSERIDOS DINAMICAMENTE VIA JS -->
+                    <!-- Vídeos inseridos dinamicamente via JS -->
                 </div>
 
             </div>
         </section>
+
+
+        <!-- =========================
+             DIVERSOS
+        ========================== -->
 
         <section
             id="secao-diversos"
@@ -277,26 +327,32 @@
 
                 </div>
 
+
                 <div
                     id="lista-diversos"
                     class="row g-4"
                 >
-                    <!-- VÍDEOS INSERIDOS DINAMICAMENTE VIA JS -->
+                    <!-- Vídeos inseridos dinamicamente via JS -->
                 </div>
 
             </div>
         </section>
 
+
+        <!-- =========================
+             BUSCA SEM RESULTADOS
+        ========================== -->
+
         <div
-            id="mensagem-sem-resultados" 
+            id="mensagem-sem-resultados"
             class="mensagem-sem-resultados"
             hidden
-
         >
             <p class="mb-0">
                 Nenhum vídeo encontrado.
             </p>
         </div>
+
     </main>
 
 
@@ -305,10 +361,12 @@
     ========================== -->
 
     <footer class="rodape">
+
         <div class="container">
 
             <p class="rodape__contato">
                 Dúvidas? Ligue
+
                 <a href="tel:08005918942">
                     0800 591 8942
                 </a>
@@ -319,10 +377,14 @@
                 class="rodape__navegacao"
                 aria-label="Links do rodapé"
             >
+
                 <div class="row g-4">
 
+                    <!-- Coluna 1 -->
                     <div class="col-6 col-md-3">
+
                         <ul class="rodape__lista">
+
                             <li>
                                 <a href="#">
                                     Perguntas frequentes
@@ -352,12 +414,17 @@
                                     Só na Growflix
                                 </a>
                             </li>
+
                         </ul>
+
                     </div>
 
 
+                    <!-- Coluna 2 -->
                     <div class="col-6 col-md-3">
+
                         <ul class="rodape__lista">
+
                             <li>
                                 <a href="#">
                                     Central de Ajuda
@@ -381,12 +448,17 @@
                                     Entre em contato
                                 </a>
                             </li>
+
                         </ul>
+
                     </div>
 
 
+                    <!-- Coluna 3 -->
                     <div class="col-6 col-md-3">
+
                         <ul class="rodape__lista">
+
                             <li>
                                 <a href="#">
                                     Conta
@@ -410,12 +482,17 @@
                                     Teste de velocidade
                                 </a>
                             </li>
+
                         </ul>
+
                     </div>
 
 
+                    <!-- Coluna 4 -->
                     <div class="col-6 col-md-3">
+
                         <ul class="rodape__lista">
+
                             <li>
                                 <a href="#">
                                     Media Center
@@ -439,10 +516,13 @@
                                     Avisos legais
                                 </a>
                             </li>
+
                         </ul>
+
                     </div>
 
                 </div>
+
             </nav>
 
 
@@ -451,9 +531,12 @@
             </p>
 
         </div>
+
     </footer>
+
+
     <!-- =========================
-     MODAL DE VÍDEO
+         MODAL DE VÍDEO
     ========================== -->
 
     <div
@@ -463,10 +546,12 @@
         aria-labelledby="titulo-modal-video"
         aria-hidden="true"
     >
+
         <div class="modal-dialog modal-xl modal-dialog-centered">
 
             <div class="modal-content modal-video__conteudo">
 
+                <!-- Cabeçalho do modal -->
                 <div class="modal-header modal-video__cabecalho">
 
                     <h2
@@ -475,6 +560,7 @@
                     >
                         Reproduzir vídeo
                     </h2>
+
 
                     <button
                         type="button"
@@ -485,6 +571,8 @@
 
                 </div>
 
+
+                <!-- Player -->
                 <div class="modal-body p-0">
 
                     <div class="ratio ratio-16x9">
@@ -504,16 +592,25 @@
             </div>
 
         </div>
+
     </div>
 
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
 
     <!-- Bootstrap JS local -->
     <script
         src="./assets/libs/bootstrap-5.3/js/bootstrap.bundle.min.js"
     ></script>
+
+    <!-- Base de dados dos vídeos -->
     <script
         src="./js/database.js"
     ></script>
+
+    <!-- JavaScript da aplicação -->
     <script
         src="./js/app.js"
     ></script>

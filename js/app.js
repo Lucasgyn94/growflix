@@ -4,9 +4,16 @@ const listaUxUi = document.querySelector("#lista-ux-ui");
 const listaDiversos = document.querySelector("#lista-diversos");
 
 const botaoHero = document.querySelector(".hero-home__botao");
+
+const formularioBusca = document.querySelector(".busca-home");
 const campoBusca = document.querySelector("#campo-busca");
 
-const mensagemSemResultados = document.querySelector("#mensagem-sem-resultados");
+const mensagemSemResultados =
+    document.querySelector("#mensagem-sem-resultados");
+
+const modalVideo = document.querySelector("#modal-video");
+const playerVideo = document.querySelector("#player-video");
+
 
 const secoesPorCategoria = {
     growcast: listaGrowcast,
@@ -14,6 +21,7 @@ const secoesPorCategoria = {
     "ux-ui": listaUxUi,
     diversos: listaDiversos
 };
+
 
 const secoesCatalogo = {
     growcast: document.querySelector("#secao-growcast"),
@@ -23,8 +31,15 @@ const secoesCatalogo = {
 };
 
 
-const modalVideo = document.querySelector("#modal-video");
-const playerVideo = document.querySelector("#player-video");
+function abrirVideo(linkVideo) {
+    playerVideo.src = linkVideo;
+
+    const modal =
+        bootstrap.Modal.getOrCreateInstance(modalVideo);
+
+    modal.show();
+}
+
 
 function renderizarVideo(video, elementoDestino) {
 
@@ -42,6 +57,18 @@ function renderizarVideo(video, elementoDestino) {
 
     card.classList.add("card-video");
 
+    card.tabIndex = 0;
+
+    card.setAttribute(
+        "role",
+        "button"
+    );
+
+    card.setAttribute(
+        "aria-label",
+        `Assistir ${video.title}`
+    );
+
     card.dataset.link = video.link;
 
 
@@ -58,14 +85,18 @@ function renderizarVideo(video, elementoDestino) {
 
     const conteudo = document.createElement("div");
 
-    conteudo.classList.add("card-video__conteudo");
+    conteudo.classList.add(
+        "card-video__conteudo"
+    );
 
 
     const titulo = document.createElement("h3");
 
     titulo.textContent = video.title;
 
-    titulo.classList.add("card-video__titulo");
+    titulo.classList.add(
+        "card-video__titulo"
+    );
 
 
     conteudo.appendChild(titulo);
@@ -75,13 +106,20 @@ function renderizarVideo(video, elementoDestino) {
 
 
     card.addEventListener("click", () => {
+        abrirVideo(card.dataset.link);
+    });
 
-        playerVideo.src = card.dataset.link;
 
-        const modal =
-            bootstrap.Modal.getOrCreateInstance(modalVideo);
+    card.addEventListener("keydown", (evento) => {
 
-        modal.show();
+        if (
+            evento.key === "Enter" ||
+            evento.key === " "
+        ) {
+            evento.preventDefault();
+
+            abrirVideo(card.dataset.link);
+        }
 
     });
 
@@ -91,73 +129,125 @@ function renderizarVideo(video, elementoDestino) {
     elementoDestino.appendChild(coluna);
 }
 
-botaoHero.addEventListener("click", () => {
-    playerVideo.src = botaoHero.dataset.link;
 
-    const modal = 
-        bootstrap.Modal.getOrCreateInstance(modalVideo);
+function limparCatalogo() {
 
-    modal.show();
-});
+    Object
+        .values(secoesPorCategoria)
+        .forEach((secao) => {
+            secao.innerHTML = "";
+        });
+
+}
+
+
+function atualizarVisibilidadeSecoes(listaDeVideos) {
+
+    Object
+        .keys(secoesCatalogo)
+        .forEach((categoria) => {
+
+            const possuiVideos =
+                listaDeVideos.some((video) => {
+                    return video.category === categoria;
+                });
+
+            secoesCatalogo[categoria].hidden =
+                !possuiVideos;
+
+        });
+
+}
 
 
 function renderizarCatalogo(listaDeVideos) {
+
     limparCatalogo();
 
+
     listaDeVideos.forEach((video) => {
-        const elementoDestino = secoesPorCategoria[video.category];
+
+        const elementoDestino =
+            secoesPorCategoria[video.category];
+
 
         if (!elementoDestino) {
-            console.warn(`Categoria: ${video.category} não encontrada.`);
+
+            console.warn(
+                `Categoria: ${video.category} não encontrada.`
+            );
+
             return;
         }
+
 
         renderizarVideo(
             video,
             elementoDestino
         );
-    });
-
-    atualizarVisibilidadeSecoes(listaDeVideos);
-
-    mensagemSemResultados.hidden = listaDeVideos.length > 0;
-}
-
-function limparCatalogo() {
-    Object.values(secoesPorCategoria).forEach((secao) => {
-        secao.innerHTML = "";
-    });
-    /*OBS: Object.values(secoesPorCategoria) retorna somente os valores: */
-}
-
-function atualizarVisibilidadeSecoes(listaDeVideos) {
-    Object.keys(secoesCatalogo).forEach((categoria) => {
-        const possuiVideos = listaDeVideos.some((video) => {
-            return video.category === categoria;
-        });
-        secoesCatalogo[categoria].hidden = !possuiVideos;
 
     });
+
+
+    atualizarVisibilidadeSecoes(
+        listaDeVideos
+    );
+
+
+    mensagemSemResultados.hidden =
+        listaDeVideos.length > 0;
 }
+
+
+botaoHero.addEventListener("click", () => {
+    abrirVideo(botaoHero.dataset.link);
+});
+
+
+formularioBusca.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+});
+
 
 campoBusca.addEventListener("input", () => {
-    const termoBusca = campoBusca.value.trim().toLowerCase();
 
-    const videosFiltrados = videos.filter((video) => {
-        const titulo = video.title.toLowerCase();
-        const categoria = video.category.toLowerCase();
-        
-        return (
-            titulo.includes(termoBusca) ||
-            categoria.includes(termoBusca)
-        );
-    });
-    renderizarCatalogo(videosFiltrados);
+    const termoBusca =
+        campoBusca.value
+            .trim()
+            .toLowerCase();
+
+
+    const videosFiltrados =
+        videos.filter((video) => {
+
+            const titulo =
+                video.title.toLowerCase();
+
+            const categoria =
+                video.category.toLowerCase();
+
+
+            return (
+                titulo.includes(termoBusca) ||
+                categoria.includes(termoBusca)
+            );
+
+        });
+
+
+    renderizarCatalogo(
+        videosFiltrados
+    );
+
 });
 
-modalVideo.addEventListener("hidden.bs.modal", () => {
-    playerVideo.src = "";
-});
+
+modalVideo.addEventListener(
+    "hidden.bs.modal",
+    () => {
+        playerVideo.src = "";
+    }
+);
 
 
 renderizarCatalogo(videos);

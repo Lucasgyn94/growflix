@@ -4,9 +4,9 @@
 
 :root {
     --cor-fundo: #000000;
+    --cor-card: #181818;
 
     --cor-texto: #ffffff;
-    /* --cor-texto-secundario: #b3b3b3; */
     --cor-texto-secundario: #7c7a7a;
 
     --cor-destaque: #e50914;
@@ -61,8 +61,8 @@ img {
         url("../assets/images/banner-initial.png")
             center top / cover
             no-repeat;
+
     background-attachment: fixed;
-    
 }
 
 
@@ -182,8 +182,6 @@ img {
 
 .secao-faq {
     padding-block: 5rem;
-
-    /* border-bottom: 3px solid var(--cor-divisor); */
 }
 
 
@@ -245,31 +243,36 @@ img {
     font-size: 1.1rem;
 }
 
+
 .secao-faq .accordion-button.collapsed {
     font-weight: 500;
 }
 
+
 /* =========================
-   RODAPÉ 
+   RODAPÉ
 ========================= */
+
 .rodape {
     padding-block: 3rem;
 
     color: var(--cor-texto-secundario);
 
     border-top: 3px solid var(--cor-divisor);
-
 }
+
 
 .rodape__contato {
     margin-bottom: 2.5rem;
 }
+
 
 .rodape__contato a {
     color: inherit;
 
     text-decoration: none;
 }
+
 
 .rodape__lista {
     margin: 0;
@@ -278,9 +281,11 @@ img {
     list-style: none;
 }
 
+
 .rodape__lista li + li {
     margin-top: 0.75rem;
 }
+
 
 .rodape__lista a {
     color: var(--cor-texto-secundario);
@@ -289,16 +294,19 @@ img {
     text-decoration: none;
 }
 
+
 .rodape__lista a:hover {
     color: var(--cor-texto);
 
     text-decoration: underline;
 }
 
+
 .rodape__marca {
     margin-top: 3rem;
     margin-bottom: 0;
 }
+
 
 /* =========================
    HOME - CABEÇALHO
@@ -317,17 +325,20 @@ img {
     padding-block: 1rem;
 }
 
+
 .navegacao-home .nav-link {
     color: var(--cor-texto-secundario);
 
     transition: color var(--transicao-padrao);
 }
 
+
 .navegacao-home .nav-link:hover,
 .navegacao-home .nav-link:focus-visible,
 .navegacao-home .nav-link.active {
     color: var(--cor-texto);
 }
+
 
 /* =========================
    HOME - BUSCA
@@ -337,6 +348,7 @@ img {
     width: 100%;
 }
 
+
 .busca-home__campo {
     border: 1px solid var(--cor-texto-secundario);
 
@@ -344,11 +356,13 @@ img {
     color: var(--cor-texto);
 }
 
+
 .busca-home__campo::placeholder {
     color: var(--cor-texto-secundario);
 }
 
-.busca-home__campo::focus {
+
+.busca-home__campo:focus {
     border-color: var(--cor-texto);
 
     background-color: var(--cor-fundo);
@@ -357,18 +371,21 @@ img {
     box-shadow: none;
 }
 
+
 /* =========================
    HOME - BUSCA SEM RESULTADOS
 ========================= */
+
 .mensagem-sem-resultados {
     padding-block: 4rem;
-    
+
     color: var(--cor-texto-secundario);
 
     font-size: 1.1rem;
 
     text-align: center;
 }
+
 
 /* =========================
    HOME - HERO
@@ -383,9 +400,10 @@ img {
             rgba(0, 0, 0, 0.35)
         ),
         url("../assets/images/growcast-01.png")
-        center / cover
-        no-repeat;
+            center / cover
+            no-repeat;
 }
+
 
 .hero-home__conteudo {
     min-height: clamp(620px, 45vw, 800px);
@@ -393,12 +411,14 @@ img {
     padding-bottom: 3rem;
 }
 
+
 .hero-home__categoria {
     margin-bottom: 0.5rem;
 
     font-size: 0.9rem;
     font-weight: 700;
 }
+
 
 .hero-home__titulo {
     margin-bottom: 1.25rem;
@@ -412,22 +432,27 @@ img {
     font-weight: 800;
 }
 
+
 .hero-home__botao {
     padding: 0.65rem 1rem;
 
     font-weight: 700;
 }
 
+
 /* =========================
    HOME - CATÁLOGO
 ========================= */
+
 .secao-catalogo {
     padding-block: 2.5rem;
 }
 
+
 .secao-catalogo__cabecalho {
     margin-bottom: 1.5rem;
 }
+
 
 .secao-catalogo__titulo {
     margin: 0;
@@ -435,6 +460,7 @@ img {
     font-size: 1.25rem;
     font-weight: 700;
 }
+
 
 /* =========================
    HOME - CARDS DE VÍDEO
@@ -447,7 +473,7 @@ img {
 
     overflow: hidden;
 
-    background-color: #181818;
+    background-color: var(--cor-card);
 
     border-radius: var(--raio-pequeno);
 
@@ -458,11 +484,15 @@ img {
         box-shadow var(--transicao-padrao);
 }
 
+
 .card-video:hover {
     transform: translateY(-6px);
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.45);
 }
+
 
 .card-video__imagem {
     width: 100%;
@@ -472,11 +502,13 @@ img {
     object-fit: cover;
 }
 
+
 .card-video__conteudo {
     min-height: 74px;
 
     padding: 1rem;
 }
+
 
 .card-video__titulo {
     margin: 0;
@@ -491,28 +523,37 @@ img {
 
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+
     line-clamp: 2;
 }
+
 
 /* =========================
    HOME - MODAL DE VÍDEO
 ========================= */
+
 .modal-video__conteudo {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
 }
 
+
 .modal-video__cabecalho {
-    border-bottom: 1px solid var(--cor-divisor);
+    border-bottom:
+        1px solid var(--cor-divisor);
 }
+
 
 /* =========================
    ACESSIBILIDADE
 ========================= */
 
 a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--cor-texto);
+button:focus-visible,
+.card-video:focus-visible {
+    outline:
+        3px solid var(--cor-texto);
+
     outline-offset: 3px;
 }
 
@@ -522,6 +563,10 @@ button:focus-visible {
 ========================= */
 
 @media (max-width: 767.98px) {
+
+    /* =========================
+       MOBILE - BANNER INICIAL
+    ========================= */
 
     .banner-inicial {
         min-height: 560px;
@@ -540,6 +585,10 @@ button:focus-visible {
     }
 
 
+    /* =========================
+       MOBILE - SEÇÕES DE DESTAQUE
+    ========================= */
+
     .secao-destaque {
         padding-block: 3.5rem;
     }
@@ -552,6 +601,10 @@ button:focus-visible {
     }
 
 
+    /* =========================
+       MOBILE - PERGUNTAS FREQUENTES
+    ========================= */
+
     .secao-faq {
         padding-block: 3.5rem;
     }
@@ -563,21 +616,29 @@ button:focus-visible {
         font-size: 1.05rem;
     }
 
+
+    /* =========================
+       MOBILE - HOME / HERO
+    ========================= */
+
     .hero-home {
         min-height: 460px;
 
         background-position: center;
     }
 
+
     .hero-home__conteudo {
         min-height: 460px;
+
         padding-bottom: 2rem;
-        
     }
+
 
     .hero-home__categoria {
         font-size: 0.8rem;
     }
+
 
     .hero-home__titulo {
         margin-bottom: 1rem;
@@ -585,27 +646,41 @@ button:focus-visible {
         font-size: 2.75rem;
     }
 
+
     .hero-home__botao {
         padding: 0.55rem 0.9rem;
 
         font-size: 0.95rem;
     }
 
+
+    /* =========================
+       MOBILE - CATÁLOGO
+    ========================= */
+
     .secao-catalogo {
         padding-block: 2rem;
     }
+
 
     .secao-catalogo__cabecalho {
         margin-bottom: 1rem;
     }
 
+
     .secao-catalogo__titulo {
         font-size: 1.1rem;
     }
 
+
+    /* =========================
+       MOBILE - CARDS DE VÍDEO
+    ========================= */
+
     .card-video {
         width: 100%;
     }
+
 
     .card-video__conteudo {
         min-height: 64px;
@@ -613,13 +688,20 @@ button:focus-visible {
         padding: 0.8rem;
     }
 
+
     .card-video__titulo {
         font-size: 0.95rem;
     }
 
+
+    /* =========================
+       MOBILE - MODAL DE VÍDEO
+    ========================= */
+
     .modal-dialog {
         margin: 0.75rem;
     }
+
 
     .modal-video__cabecalho {
         padding: 0.75rem 1rem;
@@ -627,7 +709,16 @@ button:focus-visible {
 
 }
 
+
+/* =========================
+   DESKTOP
+========================= */
+
 @media (min-width: 992px) {
+
+    /* =========================
+       DESKTOP - BUSCA
+    ========================= */
 
     .busca-home {
         width: 240px;
