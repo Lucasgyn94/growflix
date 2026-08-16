@@ -6,6 +6,8 @@ const listaDiversos = document.querySelector("#lista-diversos");
 const botaoHero = document.querySelector(".hero-home__botao");
 const campoBusca = document.querySelector("#campo-busca");
 
+const mensagemSemResultados = document.querySelector("#mensagem-sem-resultados");
+
 const secoesPorCategoria = {
     growcast: listaGrowcast,
     webinar: listaWebinar,
@@ -117,6 +119,8 @@ function renderizarCatalogo(listaDeVideos) {
     });
 
     atualizarVisibilidadeSecoes(listaDeVideos);
+
+    mensagemSemResultados.hidden = listaDeVideos.length > 0;
 }
 
 function limparCatalogo() {

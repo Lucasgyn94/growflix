@@ -51,7 +51,8 @@ img {
 ========================= */
 
 .banner-inicial {
-    min-height: 610px;
+    min-height: clamp(620px, 45vw, 800px);
+
     background:
         linear-gradient(
             rgba(0, 0, 0, 0.01),
@@ -60,6 +61,7 @@ img {
         url("../assets/images/banner-initial.png")
             center top / cover
             no-repeat;
+    background-attachment: fixed;
     
 }
 
@@ -356,6 +358,19 @@ img {
 }
 
 /* =========================
+   HOME - BUSCA SEM RESULTADOS
+========================= */
+.mensagem-sem-resultados {
+    padding-block: 4rem;
+    
+    color: var(--cor-texto-secundario);
+
+    font-size: 1.1rem;
+
+    text-align: center;
+}
+
+/* =========================
    HOME - HERO
 ========================= */
 
@@ -557,6 +572,7 @@ button:focus-visible {
     .hero-home__conteudo {
         min-height: 460px;
         padding-bottom: 2rem;
+        
     }
 
     .hero-home__categoria {
