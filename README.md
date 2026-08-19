@@ -4,6 +4,10 @@ O **Growflix** é uma plataforma de vídeos inspirada em serviços de streaming,
 
 A aplicação reúne Growcasts, webinars e outros conteúdos da Growdev em uma interface responsiva, permitindo navegar pelo catálogo, pesquisar conteúdos e assistir aos vídeos diretamente pela plataforma.
 
+## Projeto online
+
+🔗 [Acessar o Growflix](https://growflix-rho.vercel.app/)
+
 ## Preview
 
 ![Preview do Growflix](./assets/images/preview-growflix.png)
